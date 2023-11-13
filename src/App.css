@@ -4,6 +4,7 @@
 * {
   --background-color: #8BA691;
   --font-color: #0c2f57;
+  --p-background: rgba(0, 119, 255, 0.144);
   --second-color: #5D807F;
   --button-color: #bdb9b9;
   --titles-color: #cfcfcf;
@@ -19,8 +20,7 @@
 
 body {
   background: var(--font-color);
-
-  overflow: hidden !important;
+  overflow-x: hidden !important;
 
 }
 
@@ -56,6 +56,7 @@ p {
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
+  z-index: 20;
 }
 
 .content {
@@ -107,6 +108,8 @@ h4 {
   height: 85vh;
   position: relative;
   display: flex;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 .product-content {
@@ -120,7 +123,11 @@ h4 {
 canvas {
   margin: 0 !important;
   margin-top: -50px !important;
+}
 
+.interactable-zone {
+  position: relative;
+  width: 50%;
 }
 
 .grabbable {
@@ -246,6 +253,7 @@ canvas {
   width: 100%;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 @media only screen and (max-width: 1800px) {
@@ -258,7 +266,7 @@ canvas {
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1400px) {
   h1 {
     font-size: 40px;
   }
@@ -266,6 +274,192 @@ canvas {
   h2 {
     font-size: 20px;
   }
+
+  p {
+    font-size: 19px;
+
+  }
+
+  .color {
+    width: 50px;
+    height: 50px;
+  }
+
+  .boxOption {
+    width: 90px;
+    height: 90px;
+  }
+
+  .option-title {
+
+    margin-right: 25px;
+  }
+
+  .description {
+    height: 20%;
+
+  }
+
+  .main-title,
+  .main-title-specs {
+    height: 30%;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  h1 {
+    font-size: 30px;
+  }
+
+
+  .color {
+    width: 40px;
+    height: 40px;
+  }
+
+  .boxOption {
+    width: 80px;
+    height: 80px;
+  }
+
+
+}
+
+@media only screen and (max-width: 1070px) {
+
+  .main-title-specs+.description {
+    overflow-y: scroll !important;
+
+  }
+
+
+  .custom-options {
+    padding: 0;
+    padding-top: 10px;
+  }
+
+  .main-title-specs {
+    height: 70px;
+    margin-bottom: 2px;
+  }
+
+  .product {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+    height: 80vh;
+  }
+
+  .interactable-zone {
+    position: relative;
+    width: 100%;
+    height: 50%;
+
+  }
+
+  .product-content {
+    width: 100%;
+    height: 50%;
+  }
+
+  canvas {
+    position: relative !important;
+    margin: 0 auto !important;
+  }
+
+  .options {
+    position: fixed;
+    z-index: 1;
+  }
+
+  .logo {
+
+    width: 110px;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .main-title,
+  .main-title-specs {
+    padding: 0px;
+    height: 170px;
+  }
+
+  .description {
+    max-width: 500px;
+    height: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .product-content {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .interactable-zone {
+    width: 100%;
+    height: 48% !important;
+    margin-top: 20px;
+
+  }
+
+  .colorOptions,
+  .padOptions {
+    width: 95%;
+    margin: 0px;
+  }
+
+  .padOptions {
+    width: 93%;
+    margin: 0px;
+    margin-bottom: 10px;
+  }
+
+  .main-title-specs {
+    height: 70px;
+    margin-bottom: 2px;
+  }
+
+  .product {
+    height: 75vh;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  .description {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .main-title-specs+.description {
+    height: 85%;
+    overflow: scroll !important;
+    margin-bottom: 20px;
+  }
+
+
+
+  .option {
+    width: 110px;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .options {
+    padding: 0;
+    justify-content: space-around;
+  }
+
+  .product-content {
+    height: 50%;
+  }
+
 }
 
 .loader {
@@ -280,6 +474,15 @@ canvas {
   animation: loading 1.3s .65s infinite;
   height: 30px;
   width: 30px;
+}
+
+.instructions {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
 }
 
 .two {
@@ -307,7 +510,7 @@ canvas {
   }
 
   100% {
-    opacity: .0;
+    opacity: 0;
     transform: scale(.15);
     box-shadow: 0 0 2px rgba(black, .1);
   }
