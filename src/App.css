@@ -73,6 +73,18 @@ p {
   color: var(--selected-color);
 }
 
+.logo {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.logo img {
+  width: 100%;
+}
+
 .options {
   width: 100vw;
   height: 110px;
@@ -80,6 +92,7 @@ p {
   display: flex;
   align-items: flex-end;
   padding-left: 50px;
+  position: relative;
 }
 
 h4 {
@@ -226,6 +239,15 @@ canvas {
   width: 100%;
 }
 
+.loadingScreen {
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 1800px) {
   h1 {
     font-size: 60px;
@@ -243,5 +265,50 @@ canvas {
 
   h2 {
     font-size: 20px;
+  }
+}
+
+.loader {
+  position: relative;
+}
+
+.one {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--titles-color);
+  opacity: .0;
+  animation: loading 1.3s .65s infinite;
+  height: 30px;
+  width: 30px;
+}
+
+.two {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--second-color);
+  opacity: .0;
+  animation: loading 1.3s infinite;
+  height: 50px;
+  width: 50px;
+}
+
+
+@keyframes loading {
+  0% {
+    opacity: .0;
+    transform: scale(.15);
+    box-shadow: 0 0 2px rgba(black, .1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(2);
+    box-shadow: 0 0 10px rgba(black, .1);
+  }
+
+  100% {
+    opacity: .0;
+    transform: scale(.15);
+    box-shadow: 0 0 2px rgba(black, .1);
   }
 }

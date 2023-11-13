@@ -4,7 +4,7 @@ import { Interactable } from './Interactable';
 import { Description } from './Description';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
+import { LoadingScreen } from './LoadingScreen';
 function App() {
   const [modelLoaded, setModelLoaded] = useState(false);
   const [headphonesObject, setHeadphones] = useState({
@@ -20,11 +20,13 @@ function App() {
   }
 
   function onModelLoaded() {
+    console.log('r');
     setModelLoaded(true);
   }
   return (
     <div className="content">
       <Router>
+        {modelLoaded == false && <LoadingScreen />}
         <Header />
         <div className="product">
           <Description

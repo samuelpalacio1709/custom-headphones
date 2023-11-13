@@ -30,6 +30,9 @@ export function Header() {
       >
         <h4>Customize</h4>
       </div>
+      <div className="logo">
+        <img src="assets/images/SPM.png" alt="" />
+      </div>
     </div>
   );
 }
