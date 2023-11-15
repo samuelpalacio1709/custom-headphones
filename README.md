@@ -4,5 +4,9 @@ https://headphones.samuelpalacio.me/
 In this demo you can configure a 3d model 
 
 
-https://github.com/samuelpalacio1709/custom-headphones/assets/82546723/ed832920-1945-4039-8049-7cc1b822fcb8
+
+
+
+
+https://github.com/samuelpalacio1709/custom-headphones/assets/82546723/48f1643b-0508-4b20-9f07-30d1c4e02989
 
